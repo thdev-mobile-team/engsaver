@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Engsaver - News Manager</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="News Management" name="keywords">
+    <meta content="News Management" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Nunito&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar Start -->
+    <div class="container-fluid bg-light position-relative shadow">
+        <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0 px-lg-5 fixed-top">
+            <a href="index.html" class="navbar-brand d-flex align-items-center font-weight-bold text-secondary" style="font-size: 50px;">
+                <img src="img/icon.png" alt="Engsaver Icon" class="icon-image">
+                <span class="text-primary ml-3">Engsaver</span>
+            </a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                <div class="navbar-nav font-weight-bold mx-auto py-0">
+                    <a href="index.html" class="nav-item nav-link active">Home</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Courses</a>
+                        <div class="dropdown-menu rounded-0 m-0">
+                            <a href="blog.html" class="dropdown-item">PET</a>
+                            <a href="single.html" class="dropdown-item">IELTS</a>
+                            <a href="single.html" class="dropdown-item">TOEIC</a>
+                            <a href="single.html" class="dropdown-item">KEY STUDY</a>
+                        </div>
+                    </div>
+                    <a href="about.html" class="nav-item nav-link">About</a>
+                    <a href="team.html" class="nav-item nav-link">Teachers</a>
+                    <a href="gallery.html" class="nav-item nav-link">Gallery</a>
+                    
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Blogs</a>
+                        <div class="dropdown-menu rounded-0 m-0">
+                            <a href="blog.html" class="dropdown-item">Blogs</a>
+                            <a href="news.html" class="dropdown-item">News</a>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                </div>
+                <a href="contact.html" class="btn btn-primary px-4">Join Class</a>
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar End -->
+
+
+    <!-- Header Start -->
+    <div class="container-fluid bg-primary mb-5">
+        <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px">
+            <h3 class="display-3 font-weight-bold text-white">Upcoming News</h3>
+            <div class="d-inline-flex text-white">
+                <p class="m-0"><a class="text-white" href="">Home</a></p>
+                <p class="m-0 px-2">/</p>
+                <p class="m-0">News</p>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+    <!-- News Start -->
+    <div class="container-fluid pt-5">
+        <div class="container">
+            <div class="text-center pb-2">
+                <p class="section-title px-5"><span class="px-2">News</span></p>
+                <h1 class="mb-4">Latest Upcoming News</h1>
+            </div>
+            <div class="row pb-3" id="news-posts">
+                <!-- News posts will be injected here by JavaScript -->
+            </div>
+            <div class="col-md-12 mb-4">
+                <nav aria-label="Page navigation">
+                    <ul class="pagination justify-content-center mb-0" id="pagination">
+                        <li class="page-item disabled" id="prev-page">
+                            <a class="page-link" href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                        </li>
+                        <li class="page-item active" id="page-1"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item" id="page-2"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item" id="next-page">
+                            <a class="page-link" href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- News End -->
+
+<script>
+// Sample news data (You can replace it with dynamic data from your server)
+const newsPosts = [
+    { img: "img/news-1.jpg", title: "News 1", content: "Details about News 1", date: "2024-10-15" },
+    { img: "img/news-2.jpg", title: "News 2", content: "Details about News 2", date: "2024-11-01" },
+    { img: "img/news-3.jpg", title: "News 3", content: "Details about News 3", date: "2024-12-05" },
+    { img: "img/news-4.jpg", title: "News 4", content: "Details about News 4", date: "2025-01-10" },
+    { img: "img/news-5.jpg", title: "News 5", content: "Details about News 5", date: "2025-02-14" }
+];
+
+// Pagination variables
+const postsPerPage = 4; // 4 news per page
+let currentPage = 1;
+
+// Function to render news posts
+function renderNews() {
+    const start = (currentPage - 1) * postsPerPage;
+    const end = start + postsPerPage;
+    const newsToShow = newsPosts.slice(start, end);
+
+    const newsContainer = document.getElementById('news-posts');
+    newsContainer.innerHTML = ''; // Clear previous posts
+
+    newsToShow.forEach(news => {
+        const newsHTML = `
+            <div class="col-lg-6 mb-4"> <!-- Change to 6 for 2 columns -->
+                <div class="card border-0 shadow-sm mb-2">
+                    <img class="card-img-top mb-2" src="${news.img}" alt="News image">
+                    <div class="card-body bg-light text-center p-4">
+                        <h4 class="">${news.title}</h4>
+                        <p><strong>Date:</strong> ${news.date}</p>
+                        <p>${news.content}</p>
+                    </div>
+                </div>
+            </div>
+        `;
+        newsContainer.innerHTML += newsHTML; // Append the news HTML
+    });
+
+    // Update pagination
+    updatePagination();
+}
+
+// Function to update pagination
+function updatePagination() {
+    const totalPages = Math.ceil(newsPosts.length / postsPerPage);
+    
+    document.getElementById('prev-page').classList.toggle('disabled', currentPage === 1);
+    document.getElementById('next-page').classList.toggle('disabled', currentPage === totalPages);
+    
+    for (let i = 1; i <= totalPages; i++) {
+        const pageItem = document.getElementById(`page-${i}`);
+        if (pageItem) {
+            pageItem.classList.toggle('active', i === currentPage);
+        }
+    }
+}
+
+// Event listeners for pagination
+document.getElementById('pagination').addEventListener('click', (event) => {
+    if (event.target.matches('.page-link')) {
+        event.preventDefault();
+        
+        const targetPage = event.target.parentElement.id.replace('page-', '');
+        if (targetPage === 'prev-page' && currentPage > 1) {
+            currentPage--;
+        } else if (targetPage === 'next-page' && currentPage < Math.ceil(newsPosts.length / postsPerPage)) {
+            currentPage++;
+        } else if (!isNaN(targetPage)) {
+            currentPage = parseInt(targetPage);
+        }
+
+        renderNews();
+    }
+});
+
+// Initial render
+renderNews(); // Render the first page of news
+
+</script>
+
+<!-- Footer (Optional, you can keep your previous footer code) -->
+<!-- Footer Start -->
+    <div class="container-fluid bg-secondary text-white mt-5 py-5 px-sm-3 px-md-5">
+        <div class="row pt-5">
+            <!-- Footer content here -->
+        </div>
+    </div>
+    <!-- Footer End -->
+
+</body>
+
+</html>

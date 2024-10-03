@@ -60,7 +60,7 @@
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Blogs</a>
                         <div class="dropdown-menu rounded-0 m-0">
                             <a href="blog.html" class="dropdown-item">Blogs</a>
-                            <a href="single.html" class="dropdown-item">News</a>
+                            <a href="news.html" class="dropdown-item">News</a>
                         </div>
                     </div>
                     <a href="contact.html" class="nav-item nav-link">Contact</a>
@@ -95,7 +95,7 @@
                 </div>
                 <div class="col-lg-7">
                     <p class="section-title pr-5"><span class="pr-2">Learn About Us</span></p>
-                    <h1 class="mb-4">Best Learning Methods for Your Future</h1>
+                    <h1 class="mb-4">Best Learning Methods</h1>
                     <p>Trung tâm Ngoại Ngữ Kiến Tạo Phương Pháp (Engsaver-Methodology Creator) luôn tự hào khi sở hữu 
                         đội ngũ giảng viên giàu kinh nghiệm bên cạnh các trainers trẻ yêu nghề, nhiệt huyết trong việc giảng dạy.</p>
                     <div class="row pt-2 pb-4">
@@ -188,82 +188,134 @@
     <!-- Facilities End -->
 
 
-    <!-- Team Start -->
-    <div class="container-fluid pt-5">
-        <div class="container">
-            <div class="text-center pb-2">
-                <p class="section-title px-5"><span class="px-2">Our Teachers</span></p>
-                <h1 class="mb-4">Meet Our Teachers</h1>
-            </div>
-            <div class="row">
-                <div class="col-md-6 col-lg-3 text-center team mb-5">
-                    <div class="position-relative overflow-hidden mb-4" style="border-radius: 100%;">
-                        <img class="img-fluid w-100" src="img/team-1.jpg" alt="" >
-                        <div
-                            class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">
-                            <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px;"
-                                href="#"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px;"
-                                href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-light text-center px-0" style="width: 38px; height: 38px;"
-                                href="#"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                    <h4>Julia Smith</h4>
-                    <i>Music Teacher</i>
-                </div>
-                <div class="col-md-6 col-lg-3 text-center team mb-5">
-                    <div class="position-relative overflow-hidden mb-4" style="border-radius: 100%;">
-                        <img class="img-fluid w-100" src="img/team-2.jpg" alt="" >
-                        <div
-                            class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">
-                            <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px;"
-                                href="#"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px;"
-                                href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-light text-center px-0" style="width: 38px; height: 38px;"
-                                href="#"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                    <h4>Jhon Doe</h4>
-                    <i>Language Teacher</i>
-                </div>
-                <div class="col-md-6 col-lg-3 text-center team mb-5">
-                    <div class="position-relative overflow-hidden mb-4" style="border-radius: 100%;">
-                        <img class="img-fluid w-100" src="img/team-3.jpg" alt="" >
-                        <div
-                            class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">
-                            <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px;"
-                                href="#"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px;"
-                                href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-light text-center px-0" style="width: 38px; height: 38px;"
-                                href="#"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                    <h4>Mollie Ross</h4>
-                    <i>Dance Teacher</i>
-                </div>
-                <div class="col-md-6 col-lg-3 text-center team mb-5">
-                    <div class="position-relative overflow-hidden mb-4" style="border-radius: 100%;">
-                        <img class="img-fluid w-100" src="img/team-4.jpg" alt="" >
-                        <div
-                            class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">
-                            <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px;"
-                                href="#"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px;"
-                                href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-light text-center px-0" style="width: 38px; height: 38px;"
-                                href="#"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                    <h4>Donald John</h4>
-                    <i>Art Teacher</i>
-                </div>
-            </div>
+       <!-- Team Start -->
+<div class="container-fluid pt-5">
+    <div class="container">
+        <div class="text-center pb-2">
+            <p class="section-title px-5"><span class="px-2">Our Teachers</span></p>
+            <h1 class="mb-4">Meet Our Teachers</h1>
         </div>
+        <div id="teamCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row">
+                        <div class="col-md-6 col-lg-3 text-center team mb-5">
+                            <div class="position-relative overflow-hidden mb-4" style="border-radius: 100%;">
+                                <img class="img-fluid w-100" src="img/header1.jpg" alt="">
+                                <div class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">
+                                    <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-outline-light text-center px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                            <h4>Julia Smith</h4>
+                            <i>Music Teacher</i>
+                        </div>
+                        <div class="col-md-6 col-lg-3 text-center team mb-5">
+                            <div class="position-relative overflow-hidden mb-4" style="border-radius: 100%;">
+                                <img class="img-fluid w-100" src="img/header1.jpg" alt="">
+                                <div class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">
+                                    <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-outline-light text-center px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                            <h4>Jhon Doe</h4>
+                            <i>Language Teacher</i>
+                        </div>
+                        <div class="col-md-6 col-lg-3 text-center team mb-5">
+                            <div class="position-relative overflow-hidden mb-4" style="border-radius: 100%;">
+                                <img class="img-fluid w-100" src="img/header1.jpg" alt="">
+                                <div class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">
+                                    <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-outline-light text-center px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                            <h4>Mollie Ross</h4>
+                            <i>Dance Teacher</i>
+                        </div>
+                        <div class="col-md-6 col-lg-3 text-center team mb-5">
+                            <div class="position-relative overflow-hidden mb-4" style="border-radius: 100%;">
+                                <img class="img-fluid w-100" src="img/header1.jpg" alt="">
+                                <div class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">
+                                    <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-outline-light text-center px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                            <h4>Donald John</h4>
+                            <i>Art Teacher</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-md-6 col-lg-3 text-center team mb-5">
+                            <div class="position-relative overflow-hidden mb-4" style="border-radius: 100%;">
+                                <img class="img-fluid w-100" src="img/header1.jpg" alt="">
+                                <div class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">
+                                    <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-outline-light text-center px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                            <h4>Alice Brown</h4>
+                            <i>Science Teacher</i>
+                        </div>
+                        <div class="col-md-6 col-lg-3 text-center team mb-5">
+                            <div class="position-relative overflow-hidden mb-4" style="border-radius: 100%;">
+                                <img class="img-fluid w-100" src="img/header1.jpg" alt="">
+                                <div class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">
+                                    <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-outline-light text-center px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                            <h4>James White</h4>
+                            <i>History Teacher</i>
+                        </div>
+                        <div class="col-md-6 col-lg-3 text-center team mb-5">
+                            <div class="position-relative overflow-hidden mb-4" style="border-radius: 100%;">
+                                <img class="img-fluid w-100" src="img/header1.jpg" alt="">
+                                <div class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">
+                                    <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-outline-light text-center px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                            <h4>Susan Green</h4>
+                            <i>Physical Education Teacher</i>
+                        </div>
+                        <div class="col-md-6 col-lg-3 text-center team mb-5">
+                            <div class="position-relative overflow-hidden mb-4" style="border-radius: 100%;">
+                                <img class="img-fluid w-100" src="img/header1.jpg" alt="">
+                                <div class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">
+                                    <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-outline-light text-center px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                            <h4>Robert King</h4>
+                            <i>Mathematics Teacher</i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#teamCarousel" role="button" data-slide="prev" style="margin-bottom: 110px;">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#teamCarousel" role="button" data-slide="next" style="margin-bottom: 110px;" >
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+
     </div>
-    <!-- Team End -->
+</div>
+<!-- Team End -->
+
 
 
         <!-- Footer Start -->
