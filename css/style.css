@@ -14,7 +14,7 @@
   object-fit: cover; /* Đảm bảo hình ảnh được bao phủ đầy đủ trong khung */
 }
 .cloud-image {
-  border-radius: 40% 60% 60% 40% / 50% 30% 70% 50%; /* Tạo viền mềm mại dạng đám mây */
+  border-radius: 40% 60% 60% 80% / 80% 50% 70% 50%; /* Tạo viền mềm mại dạng đám mây */
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); /* Thêm hiệu ứng bóng mềm */
   border: 15px solid #fff; /* Đường viền màu trắng dày 5px */
   padding: 15px; /* Thêm khoảng cách giữa hình ảnh và viền */
@@ -112,6 +112,7 @@ body {
   color: #666666;
   text-align: left;
   background-color: #fff;
+  padding-top: 70px;
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -7833,7 +7834,8 @@ button.bg-dark:focus {
 .pr-2,
 .px-2 {
   padding-right: 0.5rem !important;
-}
+
+};
 
 .pb-2,
 .py-2 {
