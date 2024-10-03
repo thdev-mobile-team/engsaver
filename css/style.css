@@ -6,13 +6,22 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 .icon-image {
-  width: 50px; /* Điều chỉnh kích thước icon */
-  height: 50px; /* Điều chỉnh kích thước icon */
+  width: 104px; /* Điều chỉnh kích thước icon */
+  height: 104px; /* Điều chỉnh kích thước icon */
   display: inline-block; /* Đảm bảo rằng icon hiển thị ngang hàng với văn bản hoặc biểu tượng khác */
   vertical-align: middle; /* Căn giữa icon theo chiều dọc */
   border-radius: 30%; /* Nếu bạn muốn icon có dạng hình tròn */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Tạo bóng cho icon */
   object-fit: cover; /* Đảm bảo hình ảnh được bao phủ đầy đủ trong khung */
+}
+.cloud-image {
+  border-radius: 40% 60% 50% 50% / 50% 40% 60% 40%; /* Tạo viền mềm mại dạng đám mây */
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); /* Thêm hiệu ứng bóng mềm */
+  border: 5px solid #fff; /* Đường viền màu trắng dày 5px */
+  padding: 10px; /* Thêm khoảng cách giữa hình ảnh và viền */
+  background-color: #f0f8ff; /* Màu nền xanh nhạt để tạo cảm giác đám mây */
+}
+.p-header{
+  font-size: large;
 }
 :root {
   --blue: #007bff;
