@@ -2721,6 +2721,9 @@ fieldset:disabled a.btn {
   color: #003366;
   border-color: #003399;
 }
+.btn-outline-footer{
+  color: #ffff;
+}
 
 .btn-outline-primary:hover {
   color: #fff;
@@ -9579,6 +9582,9 @@ button.bg-dark:focus {
 
 .text-primary {
   color: #003366 !important;
+}
+.text-footer{
+  color: #ffff;
 }
 
 a.text-primary:hover, a.text-primary:focus {
