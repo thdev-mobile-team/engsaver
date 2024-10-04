@@ -519,18 +519,6 @@
 
    <!-- Template Javascript -->
     <script src="js/main.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', (event) => {
-            let currentUrl = window.location.href;
-            // Kiểm tra xem URL có đuôi .html hay không
-            if (currentUrl.includes('.html')) {
-                // Lấy tên file mà không cần phần mở rộng .html
-                let newUrl = currentUrl.replace('.html', '');
-                // Thay đổi URL hiển thị mà không tải lại trang
-                window.history.replaceState(null, '', newUrl);
-            }
-        });
-    </script>
 </body>
 
 </html>
