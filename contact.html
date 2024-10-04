@@ -109,40 +109,84 @@
             <div class="row">
                 <div class="col-lg-7 mb-5">
                     <div class="contact-form">
-                        <div id="success"></div>
-                        <form name="sentMessage" id="contactForm" novalidate="novalidate">
+                        <div></div>
+                        <form id="contactForm">
+                            <!-- Access Key của bạn từ Web3Forms -->
+                            <input type="hidden" name="access_key" value="a22b3f9b-e5c3-47f8-8154-cffe9aca824c">
+                        
                             <div class="control-group">
-                                <input type="text" class="form-control" id="name" placeholder="Your Name"
-                                    required="required" data-validation-required-message="Please enter your name" />
+                                <input type="text" class="form-control" name="name" placeholder="Your Name" required="required" />
                                 <p class="help-block text-danger"></p>
                             </div>
+                        
                             <div class="control-group">
-                                <input type="email" class="form-control" id="email" placeholder="Your Email"
-                                    required="required" data-validation-required-message="Please enter your email" />
+                                <input type="email" class="form-control" name="email" placeholder="Your Email" required="required" />
                                 <p class="help-block text-danger"></p>
                             </div>
+                        
                             <div class="control-group">
-                                <input type="tel" class="form-control" id="phone" placeholder="Your Phone Number"
-                                    required="required"
-                                    data-validation-required-message="Please enter your phone number" />
+                                <input type="tel" class="form-control" name="phone" placeholder="Your Phone Number" required="required" />
                                 <p class="help-block text-danger"></p>
                             </div>
+                        
                             <div class="control-group">
-                                <input type="text" class="form-control" id="subject" placeholder="Subject"
-                                    required="required" data-validation-required-message="Please enter a subject" />
+                                <input type="text" class="form-control" name="subject" placeholder="Subject" required="required" />
                                 <p class="help-block text-danger"></p>
                             </div>
+                        
                             <div class="control-group">
-                                <textarea class="form-control" rows="6" id="message" placeholder="Message"
-                                    required="required"
-                                    data-validation-required-message="Please enter your message"></textarea>
+                                <textarea class="form-control" rows="6" name="message" placeholder="Message" required="required"></textarea>
                                 <p class="help-block text-danger"></p>
                             </div>
+                        
+                            <!-- Honeypot Spam Protection -->
+                            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                        
                             <div>
-                                <button class="btn btn-primary py-2 px-4" type="submit" id="sendMessageButton">Send
-                                    Message</button>
+                                <button class="btn btn-primary py-2 px-4" type="submit">Submit Form</button>
                             </div>
                         </form>
+                        
+                        <!-- Thông báo thành công -->
+                        <div id="successMessage" style="display: none;">
+                            <p>Cảm ơn bạn! Tin nhắn của bạn đã được gửi thành công.
+                                Chúng tôi sẽ liên hệ lại bạn sớm!
+                            </p>
+                        </div>
+                        
+                        <script>
+                            document.getElementById('contactForm').addEventListener('submit', function(event) {
+                                event.preventDefault(); // Ngăn chặn hành vi mặc định của form
+                        
+                                // Tạo đối tượng FormData để gửi dữ liệu
+                                const formData = new FormData(this);
+                        
+                                // Gửi dữ liệu đến Web3Forms
+                                fetch('https://api.web3forms.com/submit', {
+                                    method: 'POST',
+                                    body: formData,
+                                })
+                                .then(response => {
+                                    if (response.ok) {
+                                        // Hiển thị thông báo thành công
+                                        document.getElementById('successMessage').style.display = 'block';
+                                        // Bạn có thể reset form nếu cần
+                                        this.reset();
+                                    } else {
+                                        // Hiển thị thông báo lỗi
+                                        alert('Có lỗi xảy ra khi gửi form. Vui lòng thử lại.');
+                                        console.error('Có lỗi xảy ra khi gửi form', response);
+                                    }
+                                })
+                                .catch(error => {
+                                    alert('Có lỗi xảy ra. Vui lòng kiểm tra kết nối của bạn.');
+                                    console.error('Có lỗi xảy ra:', error);
+                                });
+                            });
+                        </script>
+                        
+                        
+                        
                     </div>
                 </div>
                 <div class="col-lg-5 mb-5">
