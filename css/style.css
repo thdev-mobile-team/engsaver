@@ -5,7 +5,7 @@
  * Copyright 2011-2020 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
-.icon-image {
+ .icon-image {
   width: 104px; /* Điều chỉnh kích thước icon */
   height: 104px; /* Điều chỉnh kích thước icon */
   display: inline-block; /* Đảm bảo rằng icon hiển thị ngang hàng với văn bản hoặc biểu tượng khác */
