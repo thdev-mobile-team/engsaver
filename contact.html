@@ -27,9 +27,21 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <style>
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 1000;
+            pointer-events: none;
+        }
+    </style>
 </head>
 
 <body>
+    <canvas id="fireworksCanvas"></canvas>
     <!-- Navbar Start -->
     <div class="container-fluid bg-light position-relative shadow">
         <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0 px-lg-5 fixed-top">
@@ -276,6 +288,102 @@
 
    <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script>
+        window.onload = function () {
+            let canvas = document.getElementById('fireworksCanvas');
+            let ctx = canvas.getContext('2d');
+            let fireworks = [];
+            let particles = [];
+
+            // Điều chỉnh kích thước canvas cho toàn màn hình
+            function resizeCanvas() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+            resizeCanvas();
+            window.addEventListener('resize', resizeCanvas);
+
+            // Tạo class Pháo hoa
+            function Firework(x, y) {
+                this.x = x;
+                this.y = y;
+                this.sparks = [];
+
+                for (let i = 0; i < 100; i++) {
+                    this.sparks.push(new Spark(this.x, this.y));
+                }
+            }
+
+            function Spark(x, y) {
+                this.x = x;
+                this.y = y;
+                this.vx = Math.random() * 5 - 2.5;
+                this.vy = Math.random() * 5 - 2.5;
+                this.alpha = 1;
+                this.size = Math.random() * 2 + 1;
+                this.color = 'rgb(' + (Math.random() * 255 >> 0) + ',' + (Math.random() * 255 >> 0) + ',' + (Math.random() * 255 >> 0) + ')';
+            }
+
+            Spark.prototype.update = function () {
+                this.x += this.vx;
+                this.y += this.vy;
+                this.alpha -= 0.01;
+            }
+
+            Spark.prototype.draw = function () {
+                ctx.globalAlpha = this.alpha;
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+
+            Firework.prototype.update = function () {
+                this.sparks.forEach(function (spark) {
+                    spark.update();
+                });
+            }
+
+            Firework.prototype.draw = function () {
+                this.sparks.forEach(function (spark) {
+                    spark.draw();
+                });
+            }
+
+            // Hàm tạo pháo hoa ngẫu nhiên
+            function createFirework() {
+                let x = Math.random() * canvas.width;
+                let y = Math.random() * canvas.height;
+                fireworks.push(new Firework(x, y));
+            }
+
+            // Hàm render các hiệu ứng
+            function render() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                fireworks.forEach(function (firework, index) {
+                    firework.update();
+                    firework.draw();
+
+                    // Xóa pháo hoa khi đã mờ dần
+                    firework.sparks = firework.sparks.filter(function (spark) {
+                        return spark.alpha > 0;
+                    });
+
+                    if (firework.sparks.length === 0) {
+                        fireworks.splice(index, 1);
+                    }
+                });
+
+                requestAnimationFrame(render);
+            }
+
+            // Tạo pháo hoa mỗi 500ms
+            setInterval(createFirework, 500);
+            render();
+        }
+
+    </script>
 </body>
 
 </html>
