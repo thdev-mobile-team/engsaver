@@ -87,49 +87,51 @@
     <!-- Header End -->
 
 
-<!-- Team Start -->
-<div class="container-fluid pt-5">
-    <div class="container">
-        <div class="text-center pb-2">
-            <p class="section-title px-5"><span class="px-2">Our Teachers</span></p>
-            <h1 class="mb-4">Meet Our Teachers</h1>
-        </div>
-        <div id="teamCarousel" class="carousel slide" data-ride="carousel" data-interval="2500">
-            <div class="carousel-inner" id="carouselInner">
-                <!-- Team members will be dynamically injected here -->
+    <!-- Team Start -->
+    <div class="container-fluid pt-5">
+        <div class="container">
+            <div class="text-center pb-2">
+                <p class="section-title px-5"><span class="px-2">Our Teachers</span></p>
+                <h1 class="mb-4">Meet Our Teachers</h1>
             </div>
-            <a class="carousel-control-prev" href="#teamCarousel" role="button" data-slide="prev" style="margin-bottom: 110px;">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#teamCarousel" role="button" data-slide="next" style="margin-bottom: 110px;">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
+            <div id="teamCarousel" class="carousel slide" data-ride="carousel" data-interval="2500">
+                <div class="carousel-inner" id="carouselInner">
+                    <!-- Team members will be dynamically injected here -->
+                </div>
+                <a class="carousel-control-prev" href="#teamCarousel" role="button" data-slide="prev"
+                    style="margin-bottom: 110px;">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#teamCarousel" role="button" data-slide="next"
+                    style="margin-bottom: 110px;">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
         </div>
     </div>
-</div>
-<!-- Team End -->
+    <!-- Team End -->
 
-<script src="js/data.js"></script>
-<script>
-    const carouselInner = document.getElementById('carouselInner');
-    const itemsPerSlide = 4; // Number of items per carousel slide
+    <script src="js/data.js"></script>
+    <script>
+        const carouselInner = document.getElementById('carouselInner');
+        const itemsPerSlide = 4; // Number of items per carousel slide
 
-    for (let i = 0; i < teamMembers.length; i += itemsPerSlide) {
-        const itemGroup = document.createElement('div');
-        itemGroup.className = 'carousel-item' + (i === 0 ? ' active' : '');
-        
-        const row = document.createElement('div');
-        row.className = 'row';
+        for (let i = 0; i < teamMembers.length; i += itemsPerSlide) {
+            const itemGroup = document.createElement('div');
+            itemGroup.className = 'carousel-item' + (i === 0 ? ' active' : '');
 
-        for (let j = 0; j < itemsPerSlide; j++) {
-            if (i + j < teamMembers.length) {
-                const member = teamMembers[i + j];
-                const col = document.createElement('div');
-                col.className = 'col-md-6 col-lg-3 text-center team mb-5';
-                
-                col.innerHTML = `
+            const row = document.createElement('div');
+            row.className = 'row';
+
+            for (let j = 0; j < itemsPerSlide; j++) {
+                if (i + j < teamMembers.length) {
+                    const member = teamMembers[i + j];
+                    const col = document.createElement('div');
+                    col.className = 'col-md-6 col-lg-3 text-center team mb-5';
+
+                    col.innerHTML = `
                     <div class="position-relative overflow-hidden mb-4" style="border-radius: 100%;">
                         <img class="img-fluid w-100" src="${member.imgSrc}" alt="">
                         <div class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">
@@ -141,15 +143,15 @@
                     <h4>${member.name}</h4>
                     <i>${member.position}</i>
                 `;
-                
-                row.appendChild(col);
-            }
-        }
 
-        itemGroup.appendChild(row);
-        carouselInner.appendChild(itemGroup);
-    }
-</script>
+                    row.appendChild(col);
+                }
+            }
+
+            itemGroup.appendChild(row);
+            carouselInner.appendChild(itemGroup);
+        }
+    </script>
 
 
 
@@ -162,29 +164,29 @@
 
 
 
-       <!-- Testimonial Start -->
-<div class="container-fluid py-5">
-    <div class="container p-0">
-        <div class="text-center pb-2">
-            <p class="section-title px-5"><span class="px-2">Testimonial</span></p>
-            <h1 class="mb-4">What Students Say!</h1>
-        </div>
-        <div class="owl-carousel testimonial-carousel" id="testimonial-posts">
-            <!-- Testimonial items will be injected here by JavaScript -->
+    <!-- Testimonial Start -->
+    <div class="container-fluid py-5">
+        <div class="container p-0">
+            <div class="text-center pb-2">
+                <p class="section-title px-5"><span class="px-2">Testimonial</span></p>
+                <h1 class="mb-4">What Students Say!</h1>
+            </div>
+            <div class="owl-carousel testimonial-carousel" id="testimonial-posts">
+                <!-- Testimonial items will be injected here by JavaScript -->
+            </div>
         </div>
     </div>
-</div>
-<!-- Testimonial End -->
+    <!-- Testimonial End -->
 
-<script src="/js/data.js"></script> <!-- Include your testimonialData.js file here -->
-<script>
-// Function to render testimonial items
-function renderTestimonialItems() {
-    const testimonialContainer = document.getElementById('testimonial-posts');
-    testimonialContainer.innerHTML = ''; // Clear previous items
+    <script src="/js/data.js"></script> <!-- Include your testimonialData.js file here -->
+    <script>
+        // Function to render testimonial items
+        function renderTestimonialItems() {
+            const testimonialContainer = document.getElementById('testimonial-posts');
+            testimonialContainer.innerHTML = ''; // Clear previous items
 
-    testimonialItems.forEach(item => {
-        const testimonialHTML = `
+            testimonialItems.forEach(item => {
+                const testimonialHTML = `
             <div class="testimonial-item px-3">
                 <div class="bg-light shadow-sm rounded mb-4 p-4">
                     <h3 class="fas fa-quote-left text-primary mr-3"></h3>
@@ -199,13 +201,13 @@ function renderTestimonialItems() {
                 </div>
             </div>
         `;
-        testimonialContainer.innerHTML += testimonialHTML; // Append the testimonial item HTML
-    });
-}
+                testimonialContainer.innerHTML += testimonialHTML; // Append the testimonial item HTML
+            });
+        }
 
-// Initial render
-renderTestimonialItems(); // Render the testimonial items
-</script>
+        // Initial render
+        renderTestimonialItems(); // Render the testimonial items
+    </script>
 
 
 
@@ -221,7 +223,7 @@ renderTestimonialItems(); // Render the testimonial items
                 <p>Trung tâm Ngoại ngữ Kiến tạo Phương pháp (Engsaver) tự hào với mô hình giáo dục tiên tiến và phương
                     pháp giảng dạy tiếng Anh sáng tạo,
                     luôn luôn đi đầu trong việc cải tiến và nâng cao chất lượng giáo dục.</p>
-                 <div class="d-flex justify-content-start mt-4">
+                <div class="d-flex justify-content-start mt-4">
                     <a class="btn btn-outline-footer rounded-circle text-center mr-2 px-0"
                         style="width: 38px; height: 38px;"
                         href="https://www.facebook.com/engsaver.methodologycreator"><i
@@ -234,9 +236,9 @@ renderTestimonialItems(); // Render the testimonial items
                     <a class="btn btn-outline-footer rounded-circle text-center mr-2 px-0"
                         style="width: 38px; height: 38px; display: flex; align-items: center; justify-content: center;"
                         href="https://zalo.me/0901106166">
-                         <span style="font-size: 20px; font-weight: bold;">Zalo</span>
+                        <span style="font-size: 20px; font-weight: bold;">Zalo</span>
                     </a>
-                     
+
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
@@ -310,7 +312,7 @@ renderTestimonialItems(); // Render the testimonial items
     <script src="mail/jqBootstrapValidation.min.js"></script>
     <script src="mail/contact.js"></script>
 
-   <!-- Template Javascript -->
+    <!-- Template Javascript -->
     <script src="js/main.js"></script>
 </body>
 

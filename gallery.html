@@ -88,39 +88,39 @@
 
 
     <!-- Gallery Start -->
-<div class="container-fluid pt-5 pb-3">
-    <div class="container">
-        <div class="text-center pb-2">
-            <p class="section-title px-5"><span class="px-2">Our Gallery</span></p>
-            <h1 class="mb-4">Our Student Learning Gallery</h1>
-        </div>
-        <div class="row">
-            <div class="col-12 text-center mb-2">
-                <ul class="list-inline mb-4" id="portfolio-flters">
-                    <li class="btn btn-outline-primary m-1" data-filter="*">All</li>
-                    <li class="btn btn-outline-primary m-1" data-filter=".first">Speaking</li>
-                    <li class="btn btn-outline-primary m-1" data-filter=".second">Writing</li>
-                    <li class="btn btn-outline-primary m-1" data-filter=".third">Reading</li>
-                    <li class="btn btn-outline-primary m-1" data-filter=".four">Listening</li>
-                </ul>
+    <div class="container-fluid pt-5 pb-3">
+        <div class="container">
+            <div class="text-center pb-2">
+                <p class="section-title px-5"><span class="px-2">Our Gallery</span></p>
+                <h1 class="mb-4">Our Student Learning Gallery</h1>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center mb-2">
+                    <ul class="list-inline mb-4" id="portfolio-flters">
+                        <li class="btn btn-outline-primary m-1" data-filter="*">All</li>
+                        <li class="btn btn-outline-primary m-1" data-filter=".first">Speaking</li>
+                        <li class="btn btn-outline-primary m-1" data-filter=".second">Writing</li>
+                        <li class="btn btn-outline-primary m-1" data-filter=".third">Reading</li>
+                        <li class="btn btn-outline-primary m-1" data-filter=".four">Listening</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row portfolio-container" id="gallery-posts">
+                <!-- Gallery items will be injected here by JavaScript -->
             </div>
         </div>
-        <div class="row portfolio-container" id="gallery-posts">
-            <!-- Gallery items will be injected here by JavaScript -->
-        </div>
     </div>
-</div>
-<!-- Gallery End -->
+    <!-- Gallery End -->
 
-<script src="/js/data.js"></script> <!-- Include your galleryData.js file here -->
-<script>
-// Function to render gallery items
-function renderGalleryItems() {
-    const galleryContainer = document.getElementById('gallery-posts');
-    galleryContainer.innerHTML = ''; // Clear previous items
+    <script src="/js/data.js"></script> <!-- Include your galleryData.js file here -->
+    <script>
+        // Function to render gallery items
+        function renderGalleryItems() {
+            const galleryContainer = document.getElementById('gallery-posts');
+            galleryContainer.innerHTML = ''; // Clear previous items
 
-    galleryItems.forEach(item => {
-        const galleryHTML = `
+            galleryItems.forEach(item => {
+                const galleryHTML = `
             <div class="col-lg-4 col-md-6 mb-4 portfolio-item ${item.category}">
                 <div class="position-relative overflow-hidden mb-2">
                     <img class="img-fluid w-100" src="${item.img}" alt="">
@@ -132,13 +132,13 @@ function renderGalleryItems() {
                 </div>
             </div>
         `;
-        galleryContainer.innerHTML += galleryHTML; // Append the gallery item HTML
-    });
-}
+                galleryContainer.innerHTML += galleryHTML; // Append the gallery item HTML
+            });
+        }
 
-// Initial render
-renderGalleryItems(); // Render the gallery items
-</script>
+        // Initial render
+        renderGalleryItems(); // Render the gallery items
+    </script>
 
 
 
@@ -154,7 +154,7 @@ renderGalleryItems(); // Render the gallery items
                 <p>Trung tâm Ngoại ngữ Kiến tạo Phương pháp (Engsaver) tự hào với mô hình giáo dục tiên tiến và phương
                     pháp giảng dạy tiếng Anh sáng tạo,
                     luôn luôn đi đầu trong việc cải tiến và nâng cao chất lượng giáo dục.</p>
-                 <div class="d-flex justify-content-start mt-4">
+                <div class="d-flex justify-content-start mt-4">
                     <a class="btn btn-outline-footer rounded-circle text-center mr-2 px-0"
                         style="width: 38px; height: 38px;"
                         href="https://www.facebook.com/engsaver.methodologycreator"><i
@@ -167,9 +167,9 @@ renderGalleryItems(); // Render the gallery items
                     <a class="btn btn-outline-footer rounded-circle text-center mr-2 px-0"
                         style="width: 38px; height: 38px; display: flex; align-items: center; justify-content: center;"
                         href="https://zalo.me/0901106166">
-                         <span style="font-size: 20px; font-weight: bold;">Zalo</span>
+                        <span style="font-size: 20px; font-weight: bold;">Zalo</span>
                     </a>
-                     
+
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
@@ -243,7 +243,7 @@ renderGalleryItems(); // Render the gallery items
     <script src="mail/jqBootstrapValidation.min.js"></script>
     <script src="mail/contact.js"></script>
 
-   <!-- Template Javascript -->
+    <!-- Template Javascript -->
     <script src="js/main.js"></script>
 </body>
 
