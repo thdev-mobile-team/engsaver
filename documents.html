@@ -120,21 +120,9 @@
         </div>
     </div>
     <!-- Blog End -->
-
+    <script src="js/data.js"></script> 
     <script>
-        // Sample blog data (You can replace it with dynamic data from your server)
-        const blogPosts = [
-            { img: "img/blog-1.jpg", title: "Title1", content: "Content1" },
-            { img: "img/blog-2.jpg", title: "Title2", content: "Content2" },
-            { img: "img/blog-3.jpg", title: "Title3", content: "Content3" },
-            { img: "img/blog-4.jpg", title: "Title4", content: "Content4" },
-            { img: "img/blog-5.jpg", title: "Title5", content: "Content5" },
-            { img: "img/blog-6.jpg", title: "Title6", content: "Content6" },
-            { img: "img/blog-7.jpg", title: "Title7", content: "Content7" },
-            { img: "img/blog-8.jpg", title: "Title8", content: "Content8" },
-            { img: "img/blog-9.jpg", title: "Title9", content: "Content9" },
-            { img: "img/blog-10.jpg", title: "Titl101", content: "Content10" },
-        ];
+
 
         // Pagination variables
         const postsPerPage = 4; // 4 posts per page
@@ -144,7 +132,7 @@
         function renderPosts() {
             const start = (currentPage - 1) * postsPerPage;
             const end = start + postsPerPage;
-            const postsToShow = blogPosts.slice(start, end);
+            const postsToShow = postDoc.slice(start, end);
 
             const blogContainer = document.getElementById('blog-posts');
             blogContainer.innerHTML = ''; // Clear previous posts
@@ -178,7 +166,7 @@
         function renderPosts() {
             const start = (currentPage - 1) * postsPerPage;
             const end = start + postsPerPage;
-            const postsToShow = blogPosts.slice(start, end);
+            const postsToShow = postDoc.slice(start, end);
 
             const blogContainer = document.getElementById('blog-posts');
             blogContainer.innerHTML = ''; // Clear previous posts
@@ -204,7 +192,7 @@
 
         // Function to create pagination
         function createPagination() {
-            const totalPages = Math.ceil(blogPosts.length / postsPerPage);
+            const totalPages = Math.ceil(postDoc.length / postsPerPage);
             const paginationContainer = document.getElementById('pagination');
             paginationContainer.innerHTML = ''; // Clear previous pagination
 
@@ -244,7 +232,7 @@
 
         // Function to update pagination
         function updatePagination() {
-            const totalPages = Math.ceil(blogPosts.length / postsPerPage);
+            const totalPages = Math.ceil(postDoc.length / postsPerPage);
 
             document.getElementById('prev-page').classList.toggle('disabled', currentPage === 1);
             document.getElementById('next-page').classList.toggle('disabled', currentPage === totalPages);
@@ -265,7 +253,7 @@
                 const targetPage = event.target.parentElement.id.replace('page-', '');
                 if (targetPage === 'prev-page' && currentPage > 1) {
                     currentPage--;
-                } else if (targetPage === 'next-page' && currentPage < Math.ceil(blogPosts.length / postsPerPage)) {
+                } else if (targetPage === 'next-page' && currentPage < Math.ceil(postDoc.length / postsPerPage)) {
                     currentPage++;
                 } else if (!isNaN(targetPage)) {
                     currentPage = parseInt(targetPage);
@@ -379,7 +367,7 @@
     <script src="mail/jqBootstrapValidation.min.js"></script>
     <script src="mail/contact.js"></script>
 
-   <!-- Template Javascript -->
+    <!-- Template Javascript -->
     <script src="js/main.js"></script>
 </body>
 

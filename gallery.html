@@ -88,89 +88,58 @@
 
 
     <!-- Gallery Start -->
-    <div class="container-fluid pt-5 pb-3">
-        <div class="container">
-            <div class="text-center pb-2">
-                <p class="section-title px-5"><span class="px-2">Our Gallery</span></p>
-                <h1 class="mb-4">Our Student Learning Gallery</h1>
-            </div>
-            <div class="row">
-                <div class="col-12 text-center mb-2">
-                    <ul class="list-inline mb-4" id="portfolio-flters">
-                        <li class="btn btn-outline-primary m-1" data-filter="*">All</li>
-                        <li class="btn btn-outline-primary m-1" data-filter=".first">Speaking</li>
-                        <li class="btn btn-outline-primary m-1" data-filter=".second">Writing</li>
-                        <li class="btn btn-outline-primary m-1" data-filter=".third">Reading</li>
-                        <li class="btn btn-outline-primary m-1" data-filter=".four">Listening</li>
-
-                    </ul>
-                </div>
-            </div>
-            <div class="row portfolio-container">
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid w-100" src="img/ga1.jpg" alt="">
-                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="img/portfolio-1.jpg" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item second">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid w-100" src="img/ga2.jpg" alt="">
-                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="img/portfolio-2.jpg" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item third">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid w-100" src="img/ga3.jpg" alt="">
-                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="img/portfolio-3.jpg" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid w-100" src="img/ga7.jpg" alt="">
-                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="img/portfolio-4.jpg" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item second">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid w-100" src="img/ga5.jpg" alt="">
-                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="img/portfolio-5.jpg" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item four">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid w-100" src="img/ga6.jpg" alt="">
-                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="img/portfolio-6.jpg" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+<div class="container-fluid pt-5 pb-3">
+    <div class="container">
+        <div class="text-center pb-2">
+            <p class="section-title px-5"><span class="px-2">Our Gallery</span></p>
+            <h1 class="mb-4">Our Student Learning Gallery</h1>
+        </div>
+        <div class="row">
+            <div class="col-12 text-center mb-2">
+                <ul class="list-inline mb-4" id="portfolio-flters">
+                    <li class="btn btn-outline-primary m-1" data-filter="*">All</li>
+                    <li class="btn btn-outline-primary m-1" data-filter=".first">Speaking</li>
+                    <li class="btn btn-outline-primary m-1" data-filter=".second">Writing</li>
+                    <li class="btn btn-outline-primary m-1" data-filter=".third">Reading</li>
+                    <li class="btn btn-outline-primary m-1" data-filter=".four">Listening</li>
+                </ul>
             </div>
         </div>
+        <div class="row portfolio-container" id="gallery-posts">
+            <!-- Gallery items will be injected here by JavaScript -->
+        </div>
     </div>
-    <!-- Gallery End -->
+</div>
+<!-- Gallery End -->
+
+<script src="/js/data.js"></script> <!-- Include your galleryData.js file here -->
+<script>
+// Function to render gallery items
+function renderGalleryItems() {
+    const galleryContainer = document.getElementById('gallery-posts');
+    galleryContainer.innerHTML = ''; // Clear previous items
+
+    galleryItems.forEach(item => {
+        const galleryHTML = `
+            <div class="col-lg-4 col-md-6 mb-4 portfolio-item ${item.category}">
+                <div class="position-relative overflow-hidden mb-2">
+                    <img class="img-fluid w-100" src="${item.img}" alt="">
+                    <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
+                        <a href="${item.lightboxImg}" data-lightbox="portfolio">
+                            <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        `;
+        galleryContainer.innerHTML += galleryHTML; // Append the gallery item HTML
+    });
+}
+
+// Initial render
+renderGalleryItems(); // Render the gallery items
+</script>
+
 
 
     <!-- Footer Start -->
