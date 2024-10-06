@@ -5,6 +5,7 @@
  * Copyright 2011-2020 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+
  .icon-image {
   width: 104px; /* Điều chỉnh kích thước icon */
   height: 104px; /* Điều chỉnh kích thước icon */
@@ -2465,9 +2466,9 @@ fieldset:disabled a.btn {
 }
 
 .btn-secondary:hover {
-  color: #fff;
-  background-color: rgba(23, 162, 184, 0.8);;
-  border-color: #003366;
+  color: #003366;
+  background-color:  #ffff;
+  border-color: #990000;
 }
 
 .btn-secondary:focus, .btn-secondary.focus {
